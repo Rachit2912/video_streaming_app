@@ -29,8 +29,7 @@ ii) all conn. fns. in other file, export it here and run it
 */
 
 import connectDB from "./db/database.js";
-import express from "express";
-const app = express();
+import app from "./app.js";
 const PORT = process.env.PORT || 8000;
 connectDB()
   .then(() => {
