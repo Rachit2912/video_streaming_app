@@ -53,7 +53,7 @@ const userSchema = new Schema(
 // it's a hook kind of a middleware, here we have used it for the password encryption and we aren't using arrow fns. for callback as it doesn't contain 'this' keyword basically it doesn't contain a reference to the current data, but we need it here and it takes time that's why used async
 userSchema.pre("save", async function (next) {
   if (!this.isModified("password")) return next(); // if pswd isn't modified, return from here only
-  this.password = bcrypt.hash(this.password, 10);
+  this.password = await bcrypt.hash(this.password, 10);
   next();
 });
 
