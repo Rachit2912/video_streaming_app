@@ -97,7 +97,7 @@ const generateAccessAndRefreshTokens = async (userId) => {
 const loginUser = asyncHandler(async (req, res) => {
   //  i) req.body
   const { email, username, password } = req.body;
-  if (!username || !email) {
+  if (!(username || email)) {
     throw new ApiError(400, "username or email are required");
   }
 
