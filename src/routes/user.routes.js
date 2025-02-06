@@ -23,6 +23,6 @@ router.route("/login").post(loginUser);
 //secured routers :
 router.route("/logout").post(verifyJWT, logoutUser); //that's how you add middlewares
 
-router.route("/refresh-token").post(refreshAccessToken); 
+router.route("/refresh-token").post(refreshAccessToken);
 
 export default router;
